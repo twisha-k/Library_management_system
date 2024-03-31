@@ -1,0 +1,33 @@
+#include <iostream>
+#include<string>
+use namespace std;
+
+class Books {
+    string title;
+    string author;
+    int ID;
+  public:
+    Books() {
+        ID = 0;
+    }
+    void createBook(string t, string a, int i) {
+        title = t;
+        author = a;
+        ID = i;
+    }
+    void showBook() {
+        cout << "-> Title: " << title << endl;
+        cout << "-> Author: " << author << endl;
+        cout << "-> ID: " << ID << endl;
+    }
+    int getId() {
+        return ID;
+    }
+    string getTitle() {
+        return title;
+    }
+    string getAuthor() {
+        return author;
+    }
+};
+  
