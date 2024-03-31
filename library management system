@@ -30,4 +30,53 @@ class Books {
         return author;
     }
 };
+class Library {    
+    Books books[100];
+    int numBooks;
+  public:
+    Library() {
+        numBooks = 0;
+    }
+    void addBook() {
+        string t, a;
+        int i;
+        cout << "\n* Enter the title: ";
+        cin.ignore();
+        getline(cin,t);
+        cout << "\n* Enter the author: ";
+        cin.ignore();
+        getline(cin,a);
+        cout << "\n* Enter the ID: ";
+        cin.ignore();
+        getline(cin,i);
+        books[numBooks].createBook(t, a, i);
+        numBooks++;
+    }
+    void removeBook() {
+        int i;
+        cout << "\nEnter the ID of the book you want to remove: ";
+        cin >> i;
+        for(int j = 0; j < numBooks; j++) {
+            if(books[j].getId() == i) {
+                for(int k = j; k < numBooks; k++) {
+                    books[k] = books[k+1];
+                }
+                numBooks--;
+                return;
+            }
+        }
+        cout << "** The mentioned book is not a part of the library **" << endl;
+    }
+    void displayBooks() {
+        cout << "\n***These are all the books present in the library***\n"<< endl;
+        cout<<"--------------------------------------------------"<<endl;
+        for(int i = 0; i < numBooks; i++) {
+            books[i].showBook();
+            cout<<endl;
+            cout<<endl;
+        }
+        cout<<"---------------------------------------------------"<<endl;
+    }
+};
+
   
