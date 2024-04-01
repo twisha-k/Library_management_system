@@ -78,5 +78,31 @@ class Library {
         cout<<"---------------------------------------------------"<<endl;
     }
 };
+int main() {     
+    Library lib;
+    int choice;
+    while(true) {
+        cout<< "\n\nThese are all the following operation you can perform in this library: \n";
+        cout << "\n1. Add a book\n 2. Remove a book\n 3. Display list of books\n 4. Exit\n";
+        cout << "\nEnter your choice from 1-4 : ";
+        cin >> choice;
+        switch(choice) {
+            case 1:
+                lib.addBook();
+                break;
+            case 2:
+                lib.removeBook();
+                break;
+            case 3:
+                lib.displayBooks();
+                break;
+            case 4:
+                return 0;
+            default:
+                cout << "**Invalid choice.**" << endl;
+        }
+    }
+}
+
 
   
